@@ -16,8 +16,8 @@ Four raw bytes at **115200 baud**, in order:
 
 | Byte | Field | Values |
 |---|---|---|
-| 0 | `mood` | 0 = no read, 1 = angry, 2 disgust, 3 fear, 4 happy, 5 sad, 6 surprised, 7 neutral 
-| 1 | `source` | 00 No Source, 01 Visual, 02 Audio, 03 Both 
+| 0 | `mood` | 0 no read, 1 angry, 2 disgust, 3 fear, 4 happy, 5 sad, 6 surprised, 7 neutral 
+| 1 | `source` | 00 no source, 01 visual input only, 02 audio input only, 03 both 
 | 2 | `confidence` | fusion confidence, compared against `CONF_THRESHOLD` which can be adjusted as per accuracy requirements |
 | 3 | `landmark` | whether or not a facial landmark is detected (if haar cascade returns true) |
 
