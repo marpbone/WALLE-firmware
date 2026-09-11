@@ -16,8 +16,8 @@ Four raw bytes at **115200 baud**, in order:
 
 | Byte | Field | Values |
 |---|---|---|
-| 0 | `mood` | 0 NO READING | 1 ANGRY | 2 DISGUST | 3 FEAR | 4 HAPPY | 5 SAD | 6 SURPRISED | 7 NEUTRAL |
-| 1 | `source` | 00 No Source | 01 Visual | 02 Audio | 03 Both |
+| 0 | `mood` | 0 = no read, 1 = angry, 2 disgust, 3 fear, 4 happy, 5 sad, 6 surprised, 7 neutral 
+| 1 | `source` | 00 No Source, 01 Visual, 02 Audio, 03 Both 
 | 2 | `confidence` | fusion confidence, compared against `CONF_THRESHOLD` which can be adjusted as per accuracy requirements |
 | 3 | `landmark` | whether or not a facial landmark is detected (if haar cascade returns true) |
 
@@ -50,8 +50,8 @@ Servo positions are normalized 0-100 in the animation code and mapped to PCA9685
 | 2 | Lower neck | 183, 458 | 30* - 160* |
 | 3 | Right eye (MG90D) | 390, 490 | 40* - 120* |
 | 4 | Left eye (MG90D) | 390, 220 | 125* - 60*, reversed |
-| 5 | Left arm | 500, 350  |
-| 6 | Right arm | 300, 550 |
+| 5 | Left arm | 500, 350  | 75* - 135* |
+| 6 | Right arm | 300, 550 | 135* - 75* |
 
 The values are specific to this chassis and servo horns; wrong limits will drive a servo into a mechanical stop and burn it out. Several servos were lost this way during development.
 
